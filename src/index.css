@@ -1,0 +1,267 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-page-start: #DCEBFF;
+    --bg-page-end: #D3F5E8;
+    --surface: #FFFFFF;
+    --text-primary: #111827;
+    --text-muted: #526071;
+    --primary-blue: #2F6BFF;
+    --color-medical: #FF5A5F;
+    --color-security: #2F6BFF;
+    --color-fire: #FF8A1F;
+  }
+
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(145deg, #DCEBFF 0%, #E2F2EE 45%, #D3F5E8 100%);
+    background-attachment: fixed;
+    color: #111827;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, .font-serif-headline {
+    font-family: 'Fraunces', Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+
+  code, pre, .font-tabular {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Drifting blurred animated background blobs */
+@keyframes blob-drift-1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(50px, -40px) scale(1.15);
+  }
+  66% {
+    transform: translate(-40px, 45px) scale(0.9);
+  }
+}
+
+@keyframes blob-drift-2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-60px, 50px) scale(1.1);
+  }
+  66% {
+    transform: translate(45px, -35px) scale(1.2);
+  }
+}
+
+@keyframes blob-drift-3 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(40px, 55px) scale(1.22);
+  }
+}
+
+.animate-blob-1 {
+  animation: blob-drift-1 16s ease-in-out infinite;
+}
+
+.animate-blob-2 {
+  animation: blob-drift-2 20s ease-in-out infinite;
+}
+
+.animate-blob-3 {
+  animation: blob-drift-3 24s ease-in-out infinite;
+}
+
+/* Refined glassmorphism floating panels */
+.frosted-panel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 20px 45px -15px rgba(47, 107, 255, 0.1), 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.frosted-panel-clean {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.05);
+}
+
+.frosted-pill {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 12px rgba(47, 107, 255, 0.06);
+}
+
+/* Breathing pulse rings around the 3 emergency buttons */
+@keyframes breathing-ring-medical {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 90, 95, 0.6), 0 14px 30px -6px rgba(255, 90, 95, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgba(255, 90, 95, 0), 0 20px 38px -6px rgba(255, 90, 95, 0.55);
+  }
+}
+
+@keyframes breathing-ring-security {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(47, 107, 255, 0.6), 0 14px 30px -6px rgba(47, 107, 255, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgba(47, 107, 255, 0), 0 20px 38px -6px rgba(47, 107, 255, 0.55);
+  }
+}
+
+@keyframes breathing-ring-fire {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 138, 31, 0.6), 0 14px 30px -6px rgba(255, 138, 31, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgba(255, 138, 31, 0), 0 20px 38px -6px rgba(255, 138, 31, 0.55);
+  }
+}
+
+.pulse-ring-medical {
+  animation: breathing-ring-medical 3s infinite ease-in-out;
+}
+
+.pulse-ring-security {
+  animation: breathing-ring-security 3s infinite ease-in-out;
+}
+
+.pulse-ring-fire {
+  animation: breathing-ring-fire 3s infinite ease-in-out;
+}
+
+/* AI Orb animated glowing aura */
+@keyframes orb-glow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 35px 8px rgba(47, 107, 255, 0.4), 0 0 20px 4px rgba(78, 204, 163, 0.45);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 55px 18px rgba(47, 107, 255, 0.55), 0 0 30px 10px rgba(78, 204, 163, 0.65);
+  }
+}
+
+.animate-ai-orb {
+  animation: orb-glow 2.5s infinite ease-in-out;
+}
+
+/* Equalizer sound wave bars */
+@keyframes wave-bounce {
+  0%, 100% {
+    height: 6px;
+  }
+  50% {
+    height: 22px;
+  }
+}
+
+.animate-wave-1 {
+  animation: wave-bounce 0.8s ease-in-out infinite 0.1s;
+}
+.animate-wave-2 {
+  animation: wave-bounce 0.8s ease-in-out infinite 0.3s;
+}
+.animate-wave-3 {
+  animation: wave-bounce 0.8s ease-in-out infinite 0.2s;
+}
+.animate-wave-4 {
+  animation: wave-bounce 0.8s ease-in-out infinite 0.4s;
+}
+
+/* Map marker gentle pulse */
+@keyframes map-pin-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+.map-wave {
+  animation: map-pin-pulse 2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+/* Typing indicator dots */
+@keyframes typing-bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+.typing-dot-1 {
+  animation: typing-bounce 1.2s infinite ease-in-out 0s;
+}
+.typing-dot-2 {
+  animation: typing-bounce 1.2s infinite ease-in-out 0.2s;
+}
+.typing-dot-3 {
+  animation: typing-bounce 1.2s infinite ease-in-out 0.4s;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(47, 107, 255, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(47, 107, 255, 0.4);
+}
+
+/* 3D Phone and Floor Reflection */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.phone-ground-reflection {
+  background: radial-gradient(ellipse at center, rgba(47, 107, 255, 0.22) 0%, rgba(17, 24, 39, 0.18) 40%, transparent 75%);
+  filter: blur(14px);
+  transform: rotateX(80deg);
+}
+
+[dir="rtl"] {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] input,
+[dir="rtl"] textarea {
+  text-align: right;
+}
+

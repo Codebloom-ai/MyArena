@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Remix MyArena - AI Football Stadium Safety Assistant",
+  "description": "Real-time AI stadium safety system with multilingual Darija, French \u0026 Arabic reporting, deduplication, 2D stadium map, and rapid incident response.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
